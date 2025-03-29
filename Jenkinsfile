@@ -13,7 +13,7 @@ pipeline{
         }
         stage('Deliver'){
             steps{
-                bat './scripts/deliver.sh'
+                bat 'scripts/deliver.sh'
             }
         }
     }
