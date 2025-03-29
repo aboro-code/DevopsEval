@@ -13,7 +13,10 @@ pipeline{
         }
         stage('Deliver'){
             steps{
-                bat 'scripts/deliver.sh'
+                script{
+                    def output = bat(script: 'java -jar target/my-app-1.0-SNAPSHOT.jar', returnStdout: true).trim()
+                    echo "Output: ${output}"
+                }
             }
         }
     }
